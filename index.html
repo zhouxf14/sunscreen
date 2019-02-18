@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,700,900" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/style.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="" class="brand-logo"><i class="material-icons">wb_sunny</i>How Does Sunscreen Work?</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="">Xiaofei Zhou | xiaofei2</a></li>
+          <li><a href="">Kexin Yang</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+<!--       <div id="player" class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/IfsKR97Fc3Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+      </div> -->
+      <div id="player"></div>
+
+      <div id="quiz1" class="slide">
+        <div id="a1" class="option">A. UVA</div>
+        <div id="b1" class="option">B. UVB</div>
+        <div id="c1" class="option">C. UVC</div>
+      </div>
+
+      <div id="slide1" class="slide">
+        <div id="move" class="option">I am good to move on!</div>
+        <div id="detail" class="option">I want more details about this question</div>
+      </div>
+
+      <div id="quiz2" class="slide">
+        <div id="a2" class="option">A</div>
+        <div id="b2" class="option">B</div>
+      </div>
+
+      <div id="quiz3" class="slide">
+        <div id="a3" class="option">A</div>
+        <div id="b3" class="option">B</div>
+        <div id="c3" class="option">C</div>
+      </div>
+
+      <div id="quiz4" class="slide">
+        <div id="a4" class="option">A</div>
+        <div id="b4" class="option">B</div>
+      </div>
+
+      <div id="quiz5" class="slide">
+        <div id="a5" class="option">A</div>
+        <div id="b5" class="option">B</div>
+      </div>
+
+      <div id="slide2" class="slide">
+        <div id="end">Congratulations! You have finished all the steps.</div>
+      </div>
+
+    </div> 
+
+    <script>
+      // 2. This code loads the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
+      var c1 = false, c2 = false, c3 = false, c4 = false, c5 = false;
+      var w1 = false, w2 = false, w3 = false, w4 = false, w5 = false;
+      var numq = 0;
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '390',
+          width: '640',
+          videoId: 'IfsKR97Fc3Y',
+          fs: '0',
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
+
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+
+      // 5. The API calls this function when the player's state changes.
+      //    The function indicates that when playing a video (state=1),
+      //    the player should play for six seconds and then stop.
+      var done = false;
+      function onPlayerStateChange(event) {
+        var quiz, stopPlayTimer;
+        var time, stopPlayAt, rate, remainingTime;
+        var time2, stopPlayAt2, rate2, remainingTime2;
+        var time3, stopPlayAt3, rate3, remainingTime3;
+        var time4, stopPlayAt4, rate4, remainingTime4;
+        var time5, stopPlayAt5, rate5, remainingTime5;
+        var time6, stopPlayAt6, rate6, remainingTime6;
+        var time7, stopPlayAt7, rate7, remainingTime7;
+        var time8, stopPlayAt8, rate8, remainingTime8;
+        var time9, stopPlayAt9, rate9, remainingTime9;
+        var time10, stopPlayAt10, rate10, remainingTime10;
+        clearTimeout(stopPlayTimer);
+
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+          stopPlayAt = 130;
+          time = player.getCurrentTime();
+          if (time + .4 < stopPlayAt) {
+            rate = player.getPlaybackRate();
+            remainingTime = (stopPlayAt - time) / rate;
+            if (numq == 0) {
+              stopPlayTimer = setTimeout(pauseVideo1, remainingTime * 1000);
+            }
+          }
+
+          stopPlayAt2 = 142;
+          time2 = player.getCurrentTime();
+          if (time2 + .4 < stopPlayAt2) {
+            rate2 = player.getPlaybackRate();
+            remainingTime2 = (stopPlayAt2 - time2) / rate2;
+            if (c1) {
+              stopPlayTimer = setTimeout(pauseVideo2, remainingTime2 * 1000);
+            }
+          }
+
+          stopPlayAt3 = 226;
+          time3 = player.getCurrentTime();
+          if (time3 + .4 < stopPlayAt3) {
+            rate3 = player.getPlaybackRate();
+            remainingTime3 = (stopPlayAt3 - time3) / rate3;
+            // if (numq == 1) {
+            //   stopPlayTimer = setTimeout(pauseVideo3, remainingTime3 * 1000);
+            // }
+            stopPlayTimer = setTimeout(pauseVideo3, remainingTime3 * 1000);
+          }
+
+          stopPlayAt4 = 236;
+          time4 = player.getCurrentTime();
+          if (time4 + .4 < stopPlayAt4) {
+            rate4 = player.getPlaybackRate();
+            remainingTime4 = (stopPlayAt4 - time4) / rate4;
+            if (c2) {
+              stopPlayTimer = setTimeout(pauseVideo2, remainingTime4 * 1000);
+            }
+          }
+
+          stopPlayAt5 = 289;
+          time5 = player.getCurrentTime();
+          if (time5 + .4 < stopPlayAt5) {
+            rate5 = player.getPlaybackRate();
+            remainingTime5 = (stopPlayAt5 - time5) / rate5;
+            // if (numq == 2) {
+            //   stopPlayTimer = setTimeout(pauseVideo4, remainingTime5 * 1000);
+            // }
+            stopPlayTimer = setTimeout(pauseVideo4, remainingTime5 * 1000);
+          }
+
+          stopPlayAt6 = 315;
+          time6 = player.getCurrentTime();
+          if (time6 + .4 < stopPlayAt6) {
+            rate6 = player.getPlaybackRate();
+            remainingTime6 = (stopPlayAt6 - time6) / rate6;
+            if (c3) {
+              stopPlayTimer = setTimeout(pauseVideo2, remainingTime6 * 1000);
+            }
+          }
+
+          stopPlayAt7 = 425;
+          time7 = player.getCurrentTime();
+          if (time7 + .4 < stopPlayAt7) {
+            rate7 = player.getPlaybackRate();
+            remainingTime7 = (stopPlayAt7 - time7) / rate7;
+            stopPlayTimer = setTimeout(pauseVideo5, remainingTime7 * 1000);
+          }
+
+          stopPlayAt8 = 444;
+          time8 = player.getCurrentTime();
+          if (time8 + .4 < stopPlayAt8) {
+            rate8 = player.getPlaybackRate();
+            remainingTime8 = (stopPlayAt8 - time8) / rate8;
+            if (c4) {
+              stopPlayTimer = setTimeout(pauseVideo2, remainingTime8 * 1000);
+            }
+          }
+
+          stopPlayAt9 = 492;
+          time9 = player.getCurrentTime();
+          if (time9 + .4 < stopPlayAt9) {
+            rate9 = player.getPlaybackRate();
+            remainingTime9 = (stopPlayAt9 - time9) / rate9;
+            stopPlayTimer = setTimeout(pauseVideo6, remainingTime9 * 1000);
+          }
+
+          stopPlayAt10 = 504;
+          time10 = player.getCurrentTime();
+          if (time10 + .4 < stopPlayAt10) {
+            rate10 = player.getPlaybackRate();
+            remainingTime10 = (stopPlayAt10 - time10) / rate10;
+            if (c5) {
+              stopPlayTimer = setTimeout(pauseVideo2, remainingTime10 * 1000);
+            }
+          }
+
+        }
+      }
+
+      function pauseVideo1() {
+        quiz = document.getElementById('quiz1');
+        player.pauseVideo();  
+        quiz.style.visibility = 'visible';
+      }
+
+      function pauseVideo2() {
+        quiz = document.getElementById('slide1');
+        player.pauseVideo();  
+        quiz.style.visibility = 'visible';
+      }
+
+      function pauseVideo3() {
+        quiz = document.getElementById('quiz2');
+        player.pauseVideo();  
+        quiz.style.visibility = 'visible';
+      }
+
+      function pauseVideo4() {
+        quiz = document.getElementById('quiz3');
+        player.pauseVideo();  
+        quiz.style.visibility = 'visible';
+      }
+
+      function pauseVideo5() {
+        quiz = document.getElementById('quiz4');
+        player.pauseVideo();  
+        quiz.style.visibility = 'visible';
+      }
+
+      function pauseVideo6() {
+        quiz = document.getElementById('quiz5');
+        player.pauseVideo();  
+        quiz.style.visibility = 'visible';
+      }
+
+      function seek(num)
+      {
+        player.seekTo(num);
+        quiz.style.visibility = 'hidden';
+        player.playVideo();
+      }
+
+      document.getElementById("a1").onclick = function(){
+        c1 = true;
+        w1 = false;
+        numq = 1;
+        seek(133);
+      }
+
+      document.getElementById("b1").onclick = function(){
+        w1 = true;
+        c1 = false;
+        numq = 1;
+        seek(143);
+      }
+
+      document.getElementById("c1").onclick = function(){
+        w1 = true;
+        c1 = false;
+        numq = 1;
+        seek(143);
+      }
+
+      document.getElementById("b2").onclick = function(){
+        c2 = true;
+        w2 = false;
+        numq = 2;
+        seek(228);
+      }
+
+      document.getElementById("a2").onclick = function(){
+        w2 = true;
+        c2 = false;
+        numq = 2;
+        seek(238);
+      }
+
+      document.getElementById("a3").onclick = function(){
+        c3 = true;
+        w3 = false;
+        numq = 3;
+        player.playVideo();
+        quiz.style.visibility = 'hidden';
+      }
+
+      document.getElementById("b3").onclick = function(){
+        w3 = true;
+        c3 = false;
+        numq = 3;
+        seek(316);
+      }
+
+      document.getElementById("c3").onclick = function(){
+        w3 = true;
+        c3 = false;
+        numq = 3;
+        seek(316);
+      }
+
+      document.getElementById("a4").onclick = function(){
+        w4 = true;
+        c4 = false;
+        numq = 4;
+        seek(445);
+      }
+
+      document.getElementById("b4").onclick = function(){
+        c4 = true;
+        w4 = false;
+        numq = 4;
+        player.playVideo();
+        quiz.style.visibility = 'hidden';
+      }
+
+      document.getElementById("b5").onclick = function(){
+        w5 = true;
+        c5 = false;
+        numq = 5;
+        seek(505);
+      }
+
+      document.getElementById("a5").onclick = function(){
+        c5 = true;
+        w5 = false;
+        numq = 5;
+        quiz.style.visibility = 'hidden';
+        player.playVideo();
+      }
+
+      document.getElementById("move").onclick = function(){
+        if (c1 && numq == 1) {
+          seek(162);
+        }
+        if (c2 && numq == 2) {
+          seek(258);
+        }
+        if (c3 && numq == 3) {
+          seek(362);
+        }
+        if (c4 && numq == 4) {
+          seek(485);
+        }
+        if (c5 && numq == 5) {
+          player.stopVideo();
+          quiz = document.getElementById('slide2');
+          quiz.style.visibility = 'visible';
+        }
+      }
+
+      document.getElementById("detail").onclick = function(){
+        if (c1 && numq == 1) {
+          seek(148);
+        }
+        if (c2 && numq == 2) {
+          seek(242);
+        }
+        if (c3 && numq == 3) {
+          seek(321);
+        }
+        if (c4 && numq == 4) {
+          seek(453);
+        }
+        if (c5 && numq == 5) {
+          seek(509);
+        }
+      }
+
+    </script>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="js/materialize.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+
+  </body>
+</html>
