@@ -19,6 +19,7 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="">Xiaofei Zhou | xiaofei2</a></li>
           <li><a href="">Kexin Yang | kexiny</a></li>
+          <!-- <li>Tools for Online Learning</li> -->
         </ul>
       </div>
     </nav>
@@ -168,13 +169,13 @@
             }
           }
 
-          stopPlayAt5 = 289;
+          stopPlayAt5 = 288;
           // time5 = player.getCurrentTime();
           if (time + .4 < stopPlayAt5) {
             rate5 = player.getPlaybackRate();
             remainingTime5 = (stopPlayAt5 - time) / rate5;
             if (numq == 2) {
-              stopPlayTimer = setTimeout(pauseVideo4, remainingTime5 * 1000);
+              stopPlayTimer = setTimeout(pauseVideo4, remainingTime5 * 1000 + 500);
             }
             // stopPlayTimer = setTimeout(pauseVideo4, remainingTime5 * 1000);
           }
@@ -189,14 +190,14 @@
             }
           }
 
-          stopPlayAt7 = 426;
+          stopPlayAt7 = 425;
           // time7 = player.getCurrentTime();
           if (time + .4 < stopPlayAt7) {
             // console.log(player.getCurrentTime());
             rate7 = player.getPlaybackRate();
             remainingTime7 = (stopPlayAt7 - time) / rate7;
             if (numq == 3) {
-              stopPlayTimer = setTimeout(pauseVideo5, remainingTime7 * 1000);
+              stopPlayTimer = setTimeout(pauseVideo5, remainingTime7 * 1000 + 500);
             }
             // stopPlayTimer = setTimeout(pauseVideo5, remainingTime7 * 1000);
           }
@@ -207,17 +208,17 @@
             rate8 = player.getPlaybackRate();
             remainingTime8 = (stopPlayAt8 - time) / rate8;
             if (c4) {
-              stopPlayTimer = setTimeout(pauseVideo2, remainingTime8 * 1000);
+              stopPlayTimer = setTimeout(pauseVideo2, remainingTime8 * 1000 + 500);
             }
           }
 
-          stopPlayAt9 = 492;
+          stopPlayAt9 = 491;
           // time9 = player.getCurrentTime();
           if (time + .4 < stopPlayAt9) {
             rate9 = player.getPlaybackRate();
             remainingTime9 = (stopPlayAt9 - time) / rate9;
             if (numq == 4) {
-              stopPlayTimer = setTimeout(pauseVideo6, remainingTime9 * 1000);
+              stopPlayTimer = setTimeout(pauseVideo6, remainingTime9 * 1000 + 700);
             }
             // stopPlayTimer = setTimeout(pauseVideo6, remainingTime9 * 1000);
           }
@@ -408,7 +409,7 @@
           seek(258);
         }
         if (c3 && numq == 3) {
-          seek(362);
+          seek(362.5);
         }
         if (c4 && numq == 4) {
           seek(485);
@@ -428,7 +429,7 @@
           seek(242);
         }
         if (c3 && numq == 3) {
-          seek(321);
+          seek(322);
         }
         if (c4 && numq == 4) {
           seek(453);
