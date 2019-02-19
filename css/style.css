@@ -1,9 +1,32 @@
 #player {
 	/*margin-top: 50px;*/
-	/*z-index: -10 !important;*/
+	z-index: -10 !important;
 	position: absolute;
 	left: 300px;
 	top: 150px;
+}
+
+.control-btn {
+	text-align: center;
+	margin-top: 510px;
+}
+
+#play {
+	background-color:  #1e88e5 !important;
+}
+
+#pause {
+	background-color:  #1e88e5 !important;
+}
+
+#protect {
+	z-index: 0;
+	position: absolute;
+	left: 300px;
+	top: 150px;
+	width: 640px;
+	height: 390px;
+	background-color: transparent;
 }
 
 .brand-logo {

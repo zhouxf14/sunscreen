@@ -18,7 +18,7 @@
         <a href="" class="brand-logo"><i class="material-icons">wb_sunny</i>How Does Sunscreen Work?</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="">Xiaofei Zhou | xiaofei2</a></li>
-          <li><a href="">Kexin Yang</a></li>
+          <li><a href="">Kexin Yang | kexiny</a></li>
         </ul>
       </div>
     </nav>
@@ -27,7 +27,12 @@
 <!--       <div id="player" class="video-container">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/IfsKR97Fc3Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
       </div> -->
+      <div id="protect"></div>
       <div id="player"></div>
+      <div class="control-btn">
+        <a id="play" class="waves-effect waves-light btn"><i class="material-icons left">play_arrow</i>PLAY</a>
+        <a id="pause" class="waves-effect waves-light btn"><i class="material-icons left">pause</i>PAUSE</a>
+      </div>
 
       <div id="quiz1" class="slide">
         <div id="a1" class="option">A. UVA</div>
@@ -102,7 +107,7 @@
       // 5. The API calls this function when the player's state changes.
       //    The function indicates that when playing a video (state=1),
       //    the player should play for six seconds and then stop.
-      var done = false;
+      // var done = false;
       function onPlayerStateChange(event) {
         var quiz, stopPlayTimer;
         var time, stopPlayAt, rate, remainingTime;
@@ -117,100 +122,111 @@
         var time10, stopPlayAt10, rate10, remainingTime10;
         clearTimeout(stopPlayTimer);
 
-        if (event.data == YT.PlayerState.PLAYING && !done) {
+        // if (event.data == YT.PlayerState.PLAYING && !done) {
+        if (event.data == YT.PlayerState.PLAYING) {
           stopPlayAt = 130;
           time = player.getCurrentTime();
+          // console.log(time);
+
           if (time + .4 < stopPlayAt) {
             rate = player.getPlaybackRate();
             remainingTime = (stopPlayAt - time) / rate;
             if (numq == 0) {
+              // console.log(YT.PlayerState.PLAYING);
               stopPlayTimer = setTimeout(pauseVideo1, remainingTime * 1000);
             }
           }
 
           stopPlayAt2 = 142;
-          time2 = player.getCurrentTime();
-          if (time2 + .4 < stopPlayAt2) {
+          // time2 = player.getCurrentTime();
+          if (time + .4 < stopPlayAt2) {
             rate2 = player.getPlaybackRate();
-            remainingTime2 = (stopPlayAt2 - time2) / rate2;
+            remainingTime2 = (stopPlayAt2 - time) / rate2;
             if (c1) {
               stopPlayTimer = setTimeout(pauseVideo2, remainingTime2 * 1000);
             }
           }
 
           stopPlayAt3 = 226;
-          time3 = player.getCurrentTime();
-          if (time3 + .4 < stopPlayAt3) {
+          // time3 = player.getCurrentTime();
+          if (time + .4 < stopPlayAt3) {
             rate3 = player.getPlaybackRate();
-            remainingTime3 = (stopPlayAt3 - time3) / rate3;
-            // if (numq == 1) {
-            //   stopPlayTimer = setTimeout(pauseVideo3, remainingTime3 * 1000);
-            // }
-            stopPlayTimer = setTimeout(pauseVideo3, remainingTime3 * 1000);
+            remainingTime3 = (stopPlayAt3 - time) / rate3;
+            if (numq == 1) {
+              stopPlayTimer = setTimeout(pauseVideo3, remainingTime3 * 1000);
+            }
+            // stopPlayTimer = setTimeout(pauseVideo3, remainingTime3 * 1000);
           }
 
           stopPlayAt4 = 236;
-          time4 = player.getCurrentTime();
-          if (time4 + .4 < stopPlayAt4) {
+          // time4 = player.getCurrentTime();
+          if (time + .4 < stopPlayAt4) {
             rate4 = player.getPlaybackRate();
-            remainingTime4 = (stopPlayAt4 - time4) / rate4;
+            remainingTime4 = (stopPlayAt4 - time) / rate4;
             if (c2) {
               stopPlayTimer = setTimeout(pauseVideo2, remainingTime4 * 1000);
             }
           }
 
           stopPlayAt5 = 289;
-          time5 = player.getCurrentTime();
-          if (time5 + .4 < stopPlayAt5) {
+          // time5 = player.getCurrentTime();
+          if (time + .4 < stopPlayAt5) {
             rate5 = player.getPlaybackRate();
-            remainingTime5 = (stopPlayAt5 - time5) / rate5;
-            // if (numq == 2) {
-            //   stopPlayTimer = setTimeout(pauseVideo4, remainingTime5 * 1000);
-            // }
-            stopPlayTimer = setTimeout(pauseVideo4, remainingTime5 * 1000);
+            remainingTime5 = (stopPlayAt5 - time) / rate5;
+            if (numq == 2) {
+              stopPlayTimer = setTimeout(pauseVideo4, remainingTime5 * 1000);
+            }
+            // stopPlayTimer = setTimeout(pauseVideo4, remainingTime5 * 1000);
           }
 
           stopPlayAt6 = 315;
-          time6 = player.getCurrentTime();
-          if (time6 + .4 < stopPlayAt6) {
+          // time6 = player.getCurrentTime();
+          if (time + .4 < stopPlayAt6) {
             rate6 = player.getPlaybackRate();
-            remainingTime6 = (stopPlayAt6 - time6) / rate6;
+            remainingTime6 = (stopPlayAt6 - time) / rate6;
             if (c3) {
               stopPlayTimer = setTimeout(pauseVideo2, remainingTime6 * 1000);
             }
           }
 
-          stopPlayAt7 = 425;
-          time7 = player.getCurrentTime();
-          if (time7 + .4 < stopPlayAt7) {
+          stopPlayAt7 = 426;
+          // time7 = player.getCurrentTime();
+          if (time + .4 < stopPlayAt7) {
+            // console.log(player.getCurrentTime());
             rate7 = player.getPlaybackRate();
-            remainingTime7 = (stopPlayAt7 - time7) / rate7;
-            stopPlayTimer = setTimeout(pauseVideo5, remainingTime7 * 1000);
+            remainingTime7 = (stopPlayAt7 - time) / rate7;
+            if (numq == 3) {
+              stopPlayTimer = setTimeout(pauseVideo5, remainingTime7 * 1000);
+            }
+            // stopPlayTimer = setTimeout(pauseVideo5, remainingTime7 * 1000);
           }
 
           stopPlayAt8 = 444;
-          time8 = player.getCurrentTime();
-          if (time8 + .4 < stopPlayAt8) {
+          // time8 = player.getCurrentTime();
+          if (time + .4 < stopPlayAt8) {
             rate8 = player.getPlaybackRate();
-            remainingTime8 = (stopPlayAt8 - time8) / rate8;
+            remainingTime8 = (stopPlayAt8 - time) / rate8;
             if (c4) {
               stopPlayTimer = setTimeout(pauseVideo2, remainingTime8 * 1000);
             }
           }
 
           stopPlayAt9 = 492;
-          time9 = player.getCurrentTime();
-          if (time9 + .4 < stopPlayAt9) {
+          // time9 = player.getCurrentTime();
+          if (time + .4 < stopPlayAt9) {
             rate9 = player.getPlaybackRate();
-            remainingTime9 = (stopPlayAt9 - time9) / rate9;
-            stopPlayTimer = setTimeout(pauseVideo6, remainingTime9 * 1000);
+            remainingTime9 = (stopPlayAt9 - time) / rate9;
+            if (numq == 4) {
+              stopPlayTimer = setTimeout(pauseVideo6, remainingTime9 * 1000);
+            }
+            // stopPlayTimer = setTimeout(pauseVideo6, remainingTime9 * 1000);
           }
 
           stopPlayAt10 = 504;
-          time10 = player.getCurrentTime();
-          if (time10 + .4 < stopPlayAt10) {
+          // time10 = player.getCurrentTime();
+          if (time + .4 < stopPlayAt10) {
             rate10 = player.getPlaybackRate();
-            remainingTime10 = (stopPlayAt10 - time10) / rate10;
+            remainingTime10 = (stopPlayAt10 - time) / rate10;
             if (c5) {
               stopPlayTimer = setTimeout(pauseVideo2, remainingTime10 * 1000);
             }
@@ -220,46 +236,81 @@
       }
 
       function pauseVideo1() {
-        quiz = document.getElementById('quiz1');
-        player.pauseVideo();  
-        quiz.style.visibility = 'visible';
+        if ((player.getPlayerState() == 1) && (numq == 0)) {
+          // console.log("quiz1");
+          quiz = document.getElementById('quiz1');
+          player.pauseVideo();  
+          quiz.style.visibility = 'visible';
+        }
       }
 
       function pauseVideo2() {
-        quiz = document.getElementById('slide1');
-        player.pauseVideo();  
-        quiz.style.visibility = 'visible';
+        if (player.getPlayerState() == 1) {
+          // console.log("slide1");
+          quiz = document.getElementById('slide1');
+          player.pauseVideo();  
+          quiz.style.visibility = 'visible';
+        }
       }
 
       function pauseVideo3() {
-        quiz = document.getElementById('quiz2');
-        player.pauseVideo();  
-        quiz.style.visibility = 'visible';
+        if ((player.getPlayerState() == 1) && (numq == 1)) {
+          // console.log("quiz2");
+          quiz = document.getElementById('quiz2');
+          player.pauseVideo();  
+          quiz.style.visibility = 'visible';
+          remainingTime3 = 540;
+        }
       }
 
       function pauseVideo4() {
-        quiz = document.getElementById('quiz3');
-        player.pauseVideo();  
-        quiz.style.visibility = 'visible';
+        if ((player.getPlayerState() == 1) && (numq == 2)) {
+          // console.log("quiz3");
+          quiz = document.getElementById('quiz3');
+          player.pauseVideo();  
+          quiz.style.visibility = 'visible';
+        }
       }
 
       function pauseVideo5() {
-        quiz = document.getElementById('quiz4');
-        player.pauseVideo();  
-        quiz.style.visibility = 'visible';
+        if ((player.getPlayerState() == 1) && (numq == 3)) {
+          // console.log("quiz4");
+          quiz = document.getElementById('quiz4');
+          player.pauseVideo();  
+          quiz.style.visibility = 'visible';
+        }
+        // console.log("quiz4");
+        // console.log(player.getCurrentTime());
+        // quiz = document.getElementById('quiz4');
+        // player.pauseVideo();  
+        // quiz.style.visibility = 'visible';
       }
 
       function pauseVideo6() {
-        quiz = document.getElementById('quiz5');
-        player.pauseVideo();  
-        quiz.style.visibility = 'visible';
+        if ((player.getPlayerState() == 1) && (numq == 4)) {
+          // console.log("quiz5");
+          quiz = document.getElementById('quiz5');
+          player.pauseVideo();  
+          quiz.style.visibility = 'visible';
+        }
       }
 
-      function seek(num)
-      {
+      function seek(num) {
         player.seekTo(num);
         quiz.style.visibility = 'hidden';
         player.playVideo();
+      }
+
+      document.getElementById('play').onclick = function() {
+        if(player.getPlayerState() != 1) {
+          player.playVideo();
+        }
+      }
+
+      document.getElementById('pause').onclick = function() {
+        if(player.getPlayerState() == 1) {
+          player.pauseVideo();
+        }
       }
 
       document.getElementById("a1").onclick = function(){
