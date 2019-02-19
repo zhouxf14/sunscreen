@@ -6,9 +6,43 @@
 	top: 150px;
 }
 
-.control-btn {
-	text-align: center;
-	margin-top: 510px;
+#guide {
+	position: absolute;
+	left: 950px;
+	top: 150px;
+}
+
+#guide p {
+	font-family: 'Raleway', sans-serif !important;
+	font-weight: 700 !important;
+	font-size: 14px;
+}
+
+label span {
+	font-family: 'Raleway', sans-serif !important;
+	font-weight: 500 !important;
+	font-size: 10px;
+}
+
+#control-btn {
+	position: absolute;
+	top: 550px;
+	left: 350px;
+	/*visibility: hidden;*/
+}
+
+#control-btn2 {
+	position: absolute;
+	top: 550px;
+	left: 350px;
+	visibility: hidden;
+}
+
+#control-btn2 span {
+	font-family: 'Raleway', sans-serif !important;
+	font-weight: 700 !important;
+	font-size: 14px;
+	margin-left: 15px;
 }
 
 #play {
@@ -16,6 +50,14 @@
 }
 
 #pause {
+	background-color:  #1e88e5 !important;
+}
+
+#quick {
+	/*visibility: hidden;*/
+}
+
+#full {
 	background-color:  #1e88e5 !important;
 }
 

@@ -30,10 +30,58 @@
       </div> -->
       <div id="protect"></div>
       <div id="player"></div>
-      <div class="control-btn">
+
+      <div id="control-btn">
         <a id="play" class="waves-effect waves-light btn"><i class="material-icons left">play_arrow</i>PLAY</a>
         <a id="pause" class="waves-effect waves-light btn"><i class="material-icons left">pause</i>PAUSE</a>
       </div>
+
+      <div id="control-btn2">
+        <!-- <a id="quick"></a> -->
+        <a id="full" class="waves-effect waves-light btn">Back To Full Version</a>
+        <span>Current View: Quick Tutorial</span>
+      </div>
+
+
+      <form action="#" id="guide">
+        <p>QUICK TUTORIAL</p>
+        <p id="need">
+          <label>
+            <input class="with-gap" name="group1" type="radio" />
+            <span>Why We Need Sunscreen</span>
+          </label>
+        </p>
+        <p id="uv">
+          <label>
+            <input class="with-gap" name="group1" type="radio" />
+            <span>Different UV Rays</span>
+          </label>
+        </p>
+        <p id="phy">
+          <label>
+            <input class="with-gap" name="group1" type="radio"  />
+            <span>Physical Sunscreen</span>
+          </label>
+        </p>
+        <p id="chem">
+          <label>
+            <input class="with-gap" name="group1" type="radio" />
+            <span>Chemical Sunscreen</span>
+          </label>
+        </p>
+        <p id="procon1">
+          <label>
+            <input class="with-gap" name="group1" type="radio" />
+            <span>Pros of Physical Sunscreen</span>
+          </label>
+        </p>
+        <p id="procon2">
+          <label>
+            <input class="with-gap" name="group1" type="radio" />
+            <span>Pros of Chemical Sunscreen</span>
+          </label>
+        </p>
+      </form>
 
       <div id="quiz1" class="slide">
         <div id="a1" class="option">A. UVA</div>
@@ -260,7 +308,7 @@
           quiz = document.getElementById('quiz2');
           player.pauseVideo();  
           quiz.style.visibility = 'visible';
-          remainingTime3 = 540;
+          // remainingTime3 = 540;
         }
       }
 
@@ -312,6 +360,73 @@
         if(player.getPlayerState() == 1) {
           player.pauseVideo();
         }
+      }
+
+      document.getElementById('need').onclick = function() {
+        // console.log("test");
+        document.getElementById('control-btn').style.visibility = 'hidden';
+        document.getElementById('control-btn2').style.visibility = 'visible';
+        player.loadVideoById({videoId: 'IfsKR97Fc3Y',
+                     startSeconds: 0,
+                     endSeconds: 55,
+                     suggestedQuality: 'large'});
+        // document.getElementById('pause').style.visibility = 'visible';
+      }
+
+      document.getElementById('uv').onclick = function() {
+        // console.log("test");
+        document.getElementById('control-btn').style.visibility = 'hidden';
+        document.getElementById('control-btn2').style.visibility = 'visible';
+        player.loadVideoById({videoId: 'IfsKR97Fc3Y',
+                     startSeconds: 57,
+                     endSeconds: 120,
+                     suggestedQuality: 'large'});
+      }
+
+      document.getElementById('phy').onclick = function() {
+        document.getElementById('control-btn').style.visibility = 'hidden';
+        document.getElementById('control-btn2').style.visibility = 'visible';
+        // console.log("test");
+        player.loadVideoById({videoId: 'IfsKR97Fc3Y',
+                     startSeconds: 327,
+                     endSeconds: 361,
+                     suggestedQuality: 'large'});
+      }
+
+      document.getElementById('chem').onclick = function() {
+        document.getElementById('control-btn').style.visibility = 'hidden';
+        document.getElementById('control-btn2').style.visibility = 'visible';
+        // console.log("test");
+        player.loadVideoById({videoId: 'IfsKR97Fc3Y',
+                     startSeconds: 362,
+                     endSeconds: 397,
+                     suggestedQuality: 'large'});
+      }
+
+      document.getElementById('procon1').onclick = function() {
+        document.getElementById('control-btn').style.visibility = 'hidden';
+        document.getElementById('control-btn2').style.visibility = 'visible';
+        // console.log("test");
+        player.loadVideoById({videoId: 'IfsKR97Fc3Y',
+                     startSeconds: 456,
+                     endSeconds: 484,
+                     suggestedQuality: 'large'});
+      }
+
+      document.getElementById('procon2').onclick = function() {
+        document.getElementById('control-btn').style.visibility = 'hidden';
+        document.getElementById('control-btn2').style.visibility = 'visible';
+        // console.log("test");
+        player.loadVideoById({videoId: 'IfsKR97Fc3Y',
+                     startSeconds: 509.5,
+                     endSeconds: 525,
+                     suggestedQuality: 'large'});
+      }
+
+      document.getElementById('full').onclick = function() {
+        document.getElementById('control-btn2').style.visibility = 'hidden';
+        document.getElementById('control-btn').style.visibility = 'visible';
+        location.reload();
       }
 
       document.getElementById("a1").onclick = function(){
